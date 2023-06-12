@@ -54,3 +54,5 @@ const result = `Мінімальна ціна: ${minPrice};
 Чистий прибуток: ${newProfit.toFixed(2)}.`
 
 console.log(result);
+
+document.write(result);
