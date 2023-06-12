@@ -40,17 +40,17 @@ console.log('price with discount: ', discountPrice);
 const newProfit = sum / 2 - (sum - discountPrice);
 console.log('new profit: ', newProfit.toFixed(2));
 
-const result = `Мінімальна ціна: ${minPrice};
-Максимальна ціна: ${maxPrice};
-Вартість усіх товарів: ${sum};
-Нові ціни без копійок: хліб: ${Bread}, цибуля ${Onion}, цукор ${Sugar};
-Нова вартість без копійок: ${Sum};
-Округлена сума товарів до сотень: ${roundedSumToHundred};
-Чи є сума парним числом? ${even};
-Решта  з 500: ${rest};
-Середнє значення цін: ${averagePrice};
-Знижка: ${discount} %;
-Ціна із знижкою: ${discountPrice};
+const result = `Мінімальна ціна: ${minPrice};<br>
+Максимальна ціна: ${maxPrice};<br>
+Вартість усіх товарів: ${sum};<br>
+Нові ціни без копійок: хліб: ${Bread}, цибуля ${Onion}, цукор ${Sugar};<br>
+Нова вартість без копійок: ${Sum};<br>
+Округлена сума товарів до сотень: ${roundedSumToHundred};<br>
+Чи є сума парним числом? ${even};<br>
+Решта  з 500: ${rest};<br>
+Середнє значення цін: ${averagePrice};<br>
+Знижка: ${discount} %;<br>
+Ціна із знижкою: ${discountPrice};<br>
 Чистий прибуток: ${newProfit.toFixed(2)}.`
 
 console.log(result);
