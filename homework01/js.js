@@ -19,10 +19,10 @@ console.log('new prices: ', 'bread: ', Bread, 'onion: ', Onion, 'sugar: ', Sugar
 const Sum = Bread + Onion + Sugar;
 console.log('new sum: ', Sum);
 
-const roundedSumToHundred = Math.ceil(Sum / 100) * 100;
+const roundedSumToHundred = Math.round(Sum / 100) * 100;
 console.log('rounded Sum to hundred: ', roundedSumToHundred);
 
-const even = Math.floor(Sum / 100) * 100 % 2 === 0;
+const even = Sum % 2 === 0;
 console.log('even Sum or not: ', even);
 
 const rest = 500 - sum;
