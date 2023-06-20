@@ -74,7 +74,7 @@ function calcNetIncome() {
     const tax = 19.5 / 100;
 
     while (isNaN(salary)|| salary.toString().trim()===''||!salary) {
-        salary = prompt('Це не є числом. Спробуйте ще раз ввести свою зарплату');
+        salary = Number(prompt('Це не є числом. Спробуйте ще раз ввести свою зарплату'));
     }
 
     const netIncome = salary - salary * tax;
@@ -93,12 +93,12 @@ alert('Функція 5 "Повертаємо рандомне ціле числ
 function getRandomNumber() {
     let num1 = Number(prompt('Введіть мінімальне значення:'));
     while (isNaN(num1) || num1.toString().trim() === ''||!num1) {
-        num1=prompt('Це не є числом. Спробуйте ще раз')
+        num1 = Number(prompt('Це не є числом. Спробуйте ще раз'));
     }
 
     let num2 = Number(prompt('Введіть максимальне значення:'));
     while (isNaN(num2) || num2.toString().trim() === ''||!num2||num2<num1) {
-        num2=prompt('Спробуйте ще раз. Введи більше 2 число')
+        num2 = Number(prompt('Спробуйте ще раз. Введи більше 2 число'));
     }
     
     const randomNumber = Math.floor(Math.random() * (num2 - num1 + 1)) + num1;
