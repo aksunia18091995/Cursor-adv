@@ -1,9 +1,9 @@
 // Функція 1
 alert('Функція 1 "Найбільше число"')
 function getMaxDigit() {
-    let number = Number(prompt('Введіть число:'));
+    let number = prompt('Введіть число:');
 
-    while (isNaN(number)|| number.toString().trim()===''||!number) {
+    while (isNaN(number)|| number.trim()===''||!number) {
         number = prompt('Це не є числом. Спробуйте ще раз');
     }
     const arrayOfNumbers = number.split('').map(Number);
@@ -122,7 +122,7 @@ function countLetter() {
     
     let letter = prompt('Введіть літеру, кількість якої треба знайти');
     while (!isNaN(letter) || letter.trim() === '' || !letter) {
-        letter=prompt('Некоректне введення. Введіть ще раз слово')
+        letter=prompt('Некоректне введення. Введіть ще раз букву')
     }
 
     word = word.toLowerCase();
