@@ -1,6 +1,6 @@
 let num1;
 
-do { 
+do {
     num1 = Number(prompt('Введіть ціле перше число'));
 } while (
     num1 === NaN || !Number.isInteger(num1) || !num1
@@ -10,10 +10,10 @@ console.log(num1);
 
 let num2;
 
-do { 
+do {
     num2 = Number(prompt('Введіть ціле друге число'))
 } while (
-    num2 === NaN || !Number.isInteger(num2)|| !num2
+    num2 === NaN || !Number.isInteger(num2) || !num2
 )
 
 console.log(num2);
