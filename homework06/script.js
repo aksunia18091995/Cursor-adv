@@ -117,7 +117,7 @@ function calculateWordLetters() {
     for (let i = 0; i < word.length; i++){
         const letter = word[i].toLowerCase();
 
-        if(letter!==' '){
+        if(letter !== ' '){
             if (letters.hasOwnProperty(letter)) {
                 letters[letter]++;
             } else {
@@ -125,8 +125,15 @@ function calculateWordLetters() {
             }
         }
     }
-    return letters;
+    return {
+        letters: letters,
+        word: word
+    }
 }
 
 const wordLetters = calculateWordLetters();
-document.writeln(`Розбір вашого слова ${JSON.stringify(wordLetters)}`)
+document.writeln(`Розбір вашого слова ${wordLetters.word}`);
+for (const letter in wordLetters.letters) {
+    document.writeln(`{"${letter}": ${wordLetters[letter]},`);
+}
+document.writeln('}');
