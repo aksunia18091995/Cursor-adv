@@ -115,7 +115,7 @@ function calculateWordLetters() {
     const letters = {};
 
     for (let i = 0; i < word.length; i++){
-        const letter = word[i];
+        const letter = word[i].toLowerCase();
 
         if(letter!==' '){
             if (letters.hasOwnProperty(letter)) {
