@@ -125,15 +125,12 @@ function calculateWordLetters() {
             }
         }
     }
-    return {
-        letters: letters,
-        word: word
-    }
+    return letters;
 }
 
 const wordLetters = calculateWordLetters();
-document.writeln(`Розбір вашого слова ${wordLetters.word}`);
-for (const letter in wordLetters.letters) {
-    document.writeln(`{"${letter}": ${wordLetters[letter]},`);
+document.writeln('Розбір вашого слова {');
+for (const letter in wordLetters) {
+    document.writeln(`"${letter}": ${wordLetters[letter]},`);
 }
 document.writeln('}');
