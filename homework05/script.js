@@ -136,21 +136,19 @@ function getModa() {
 
     const numbersObject = {};
     for (let number of validNumbers) {
-        const digits = String(number).split('');
-        for (let digit of digits) {
-            numbersObject[digit] = numbersObject[digit] ? numbersObject[digit] + 1 : 1;
-        }
+        numbersObject[number] = numbersObject[number] ? numbersObject[number] + 1 : 1;
+        
     }
 
     let moda=[];
     let maxCount = 0;
 
-    for (let digit in numbersObject) {
-        if (numbersObject[digit] > maxCount) {
-            maxCount = numbersObject[digit];
-            moda = [digit];
-        } else if (numbersObject[digit] === maxCount) {
-            moda.push(digit);
+    for (let number in numbersObject) {
+        if (numbersObject[number] > maxCount) {
+            maxCount = numbersObject[number];
+            moda = [number];
+        } else if (numbersObject[number] === maxCount) {
+            moda.push(number);
         }
     }
 
