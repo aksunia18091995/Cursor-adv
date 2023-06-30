@@ -123,7 +123,7 @@ function getDividedByFive() {
 }
 
 const resDivBy5 = getDividedByFive();
-document.writeln(`Серед чисел ${resDivBy5.numbersArray} є такі, що діляться націло на 5 - ${resDivBy5.numbers}`)
+// document.writeln(`Серед чисел ${resDivBy5.numbersArray} є такі, що діляться націло на 5 - ${resDivBy5.numbers}`)
 
 // Визначаємо наймоднішу цифру
 alert('Визначаємо наймоднішу цифру серед ряду чисел')
