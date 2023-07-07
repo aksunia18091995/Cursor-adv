@@ -79,10 +79,10 @@ class BudgetStudent extends Student {
     getScholarship() {
         if (this._dismissed) {
             console.log('Студент виключений. Немає права на стипендію.');
-            return;
+            return null;
         }
 
-        if (this.getAverageMark() >= 4.0) {
+        if (this.getAverageMark() >= 4) {
             console.log('Ви отримали 1400 грн стипендії!!!')
         } else {
             console.log('У вас занизький бал. Ви не можете претендувати на стипендію')
