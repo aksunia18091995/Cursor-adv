@@ -13,7 +13,7 @@ class Student{
 
     get marks() {
         if (this._dismissed) {
-            console.log('Студент виключений. Оцінки недоступні.');
+            console.log('Студент виключений. Оцінки недоступні.', null);
             return null;
         }
         console.log('Оцінки студента:', this._marks);
