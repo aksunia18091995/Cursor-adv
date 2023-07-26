@@ -110,6 +110,8 @@ showPlanetsBtn.addEventListener('click', () => {
         .then(response => response.json())
         .then(data => {
             const planets = data.results;
+            nextPlanetPage = data.next;
+
             planetList.innerHTML = '';
 
             planets.forEach(planetData => {
@@ -131,11 +133,69 @@ showPlanetsBtn.addEventListener('click', () => {
 
                 planetList.appendChild(listItem);
             });
+
+            if (nextPlanetPage !== null) {
+                createNextButton();
+            }
         });
 
         filmPage.style.display = 'none';
         planetsPage.style.display = 'block';
 });
+
+let nextPlanetPage = '';
+let currentPage = 1;
+
+function getNextPlanetPage() {
+    if (nextPlanetPage !== ' ') {
+        fetch(`https://swapi.dev/api/planets/?page=${currentPage}`)
+            .then(response => response.json())
+            .then(data => {
+                planetList.innerHTML = '';
+                const planets = data.results;
+                nextPlanetPage = data.next;
+                currentPage++;
+
+                planets.forEach(planetData => {
+                    const name = planetData.name;
+                    const population = planetData.population;
+                    const climate = planetData.climate;
+
+                    const listItem = document.createElement('li');
+                    listItem.innerHTML = `
+                        <div class="info-planet">
+                            <img src="${planetPhotos[name]}" alt="${name}" class="planet-photo">
+                            <div class="planet-info">
+                                <span class="planet-name">Name: ${name}</span> <br>
+                                <span class="planet-population">Population: ${population}</span> <br>
+                                <span class="planet-climate">Climate: ${climate}</span>
+                            </div>
+                        </div>
+                    `;
+
+                    planetList.appendChild(listItem);
+                });
+
+                if (nextPlanetPage !== null) {
+                    createNextButton();
+                }
+            });
+    }
+}
+
+function createNextButton() {
+    const nextButton = document.getElementById('nextButton');
+  if (nextButton) {
+    nextButton.style.display = 'block';
+  } else {
+    const newNextButton = document.createElement('button');
+    newNextButton.textContent = 'Next';
+    newNextButton.id = 'nextButton';
+    newNextButton.addEventListener('click', getNextPlanetPage);
+    planetList.appendChild(newNextButton);
+  }
+}
+
 
 showCharactersBtn.addEventListener('click', () => {
     filmPage.style.display = 'block';
