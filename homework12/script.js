@@ -144,17 +144,15 @@ showPlanetsBtn.addEventListener('click', () => {
 });
 
 let nextPlanetPage = '';
-let currentPage = 1;
 
 function getNextPlanetPage() {
     if (nextPlanetPage !== ' ') {
-        fetch(`https://swapi.dev/api/planets/?page=${currentPage}`)
+        fetch(nextPlanetPage)
             .then(response => response.json())
             .then(data => {
                 planetList.innerHTML = '';
                 const planets = data.results;
                 nextPlanetPage = data.next;
-                currentPage++;
 
                 planets.forEach(planetData => {
                     const name = planetData.name;
